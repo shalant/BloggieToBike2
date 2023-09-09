@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -37,6 +40,48 @@
                             <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false" id="navbarDropdownAdmin">
+                                    Admin
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
+                                    <li>
+                                        <a href="/admin/blogs/add" class="dropdown-item">Add Blog Post</a>
+                                    </li>
+                                    <li>
+                                        <a href="/admin/blogs/list" class="dropdown-item">Blog Posts</a>
+                                    </li>
+                                    <li>
+                                        <a href="/admin/users/index" class="dropdown-item">Users</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+
+                    </ul>
+                    <div class="d-flex align-item-center">
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <div class="me-3 text-light">
+                                @User?.Identity?.Name
+                            </div>
+
+                            <a href="/logout" class="btn bg-light text-dark me-3">Logout</a>
+                        }
+                        else
+                        {
+                            <a href="/login" class="btn bg-light text-dark me-3">Login</a>
+                            <a href="/register" class="btn bg-light text-dark me-3">Register</a>
+                        }
+                    </div>
                 </div>
             </div>
         </nav>
