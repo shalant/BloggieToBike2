@@ -81,3 +81,4 @@ C:\Users\digdr\Documents\coding\BloggieToBike2\BloggieToBike\BloggieToBike\obj\D
 C:\Users\digdr\Documents\coding\BloggieToBike2\BloggieToBike\BloggieToBike\obj\Debug\net7.0\BloggieToBike.pdb
 C:\Users\digdr\Documents\coding\BloggieToBike2\BloggieToBike\BloggieToBike\obj\Debug\net7.0\BloggieToBike.genruntimeconfig.cache
 C:\Users\digdr\Documents\coding\BloggieToBike2\BloggieToBike\BloggieToBike\obj\Debug\net7.0\ref\BloggieToBike.dll
+C:\Users\digdr\Documents\coding\BloggieToBike2\BloggieToBike\BloggieToBike\obj\Debug\net7.0\scopedcss\Pages\Shared\_LayoutBloggie.cshtml.rz.scp.css

@@ -36,6 +36,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/digdr/Documents/coding/BloggieToBike2/BloggieToBike/BloggieToBike/Pages/BikeRoutes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmlrZVJvdXRlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/digdr/Documents/coding/BloggieToBike2/BloggieToBike/BloggieToBike/Pages/BikeRoutes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmlrZVJvdXRlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/digdr/Documents/coding/BloggieToBike2/BloggieToBike/BloggieToBike/Pages/BikeRoutes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmlrZVJvdXRlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/digdr/Documents/coding/BloggieToBike2/BloggieToBike/BloggieToBike/Pages/BikeRoutes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmlrZVJvdXRlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/digdr/Documents/coding/BloggieToBike2/BloggieToBike/BloggieToBike/Pages/BikeRoutes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmlrZVJvdXRlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/digdr/Documents/coding/BloggieToBike2/BloggieToBike/BloggieToBike/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -87,3 +107,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/digdr/Documents/coding/BloggieToBike2/BloggieToBike/BloggieToBike/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-llyh9sfpvy
+
+[C:/Users/digdr/Documents/coding/BloggieToBike2/BloggieToBike/BloggieToBike/Pages/Shared/_LayoutBloggie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRCbG9nZ2llLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-j52hthqfix

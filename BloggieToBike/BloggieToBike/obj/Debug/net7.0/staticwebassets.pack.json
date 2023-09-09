@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\digdr\\Documents\\coding\\BloggieToBike2\\BloggieToBike\\BloggieToBike\\wwwroot\\images\\bikePic.jpg",
+      "PackagePath": "staticwebassets\\images\\bikePic.jpg"
+    },
+    {
+      "Id": "C:\\Users\\digdr\\Documents\\coding\\BloggieToBike2\\BloggieToBike\\BloggieToBike\\wwwroot\\images\\strava-runner-street-art-tiger-drawing-san-francisco-1.jpeg",
+      "PackagePath": "staticwebassets\\images\\strava-runner-street-art-tiger-drawing-san-francisco-1.jpeg"
+    },
+    {
       "Id": "C:\\Users\\digdr\\Documents\\coding\\BloggieToBike2\\BloggieToBike\\BloggieToBike\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

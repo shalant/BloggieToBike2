@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Vb2lP3RwzsomczPMfkUQ4sgMKB5EcVsLQ2Bbc4rWImM=",
+  "Hash": "rdK8eZ+l62y7igNtl1cj38Jm1rKqqZBYMrPKEs0L37k=",
   "Source": "BloggieToBike",
   "BasePath": "_content/BloggieToBike",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\digdr\\Documents\\coding\\BloggieToBike2\\BloggieToBike\\BloggieToBike\\wwwroot\\images\\bikePic.jpg",
+      "SourceId": "BloggieToBike",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\digdr\\Documents\\coding\\BloggieToBike2\\BloggieToBike\\BloggieToBike\\wwwroot\\",
+      "BasePath": "_content/BloggieToBike",
+      "RelativePath": "images/bikePic.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\bikePic.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\digdr\\Documents\\coding\\BloggieToBike2\\BloggieToBike\\BloggieToBike\\wwwroot\\images\\strava-runner-street-art-tiger-drawing-san-francisco-1.jpeg",
+      "SourceId": "BloggieToBike",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\digdr\\Documents\\coding\\BloggieToBike2\\BloggieToBike\\BloggieToBike\\wwwroot\\",
+      "BasePath": "_content/BloggieToBike",
+      "RelativePath": "images/strava-runner-street-art-tiger-drawing-san-francisco-1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\strava-runner-street-art-tiger-drawing-san-francisco-1.jpeg"
     },
     {
       "Identity": "C:\\Users\\digdr\\Documents\\coding\\BloggieToBike2\\BloggieToBike\\BloggieToBike\\wwwroot\\js\\site.js",

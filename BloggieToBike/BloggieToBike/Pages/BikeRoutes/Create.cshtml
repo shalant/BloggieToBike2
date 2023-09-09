@@ -1,0 +1,70 @@
+﻿@*@page
+@model BikeApp.Pages.BikeRoutes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Bike Routes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.Name" class="control-label"></label>
+                <input asp-for="BikeRoute.Name" class="form-control" />
+                <span asp-validation-for="BikeRoute.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.DateCreated" class="control-label"></label>
+                <input asp-for="BikeRoute.DateCreated" class="form-control" />
+                <span asp-validation-for="BikeRoute.DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.Length" class="control-label"></label>
+                <input asp-for="BikeRoute.Length" class="form-control" />
+                <span asp-validation-for="BikeRoute.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.Elevation" class="control-label"></label>
+                <input asp-for="BikeRoute.Elevation" class="form-control" />
+                <span asp-validation-for="BikeRoute.Elevation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.Direction" class="control-label"></label>
+                <input asp-for="BikeRoute.Direction" class="form-control" />
+                <span asp-validation-for="BikeRoute.Direction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.Description" class="control-label"></label>
+                <input asp-for="BikeRoute.Description" class="form-control" />
+                <span asp-validation-for="BikeRoute.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.StravaLink" class="control-label"></label>
+                <input asp-for="BikeRoute.StravaLink" class="form-control" />
+                <span asp-validation-for="BikeRoute.StravaLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.MapUrl" class="control-label"></label>
+                <input asp-for="BikeRoute.MapUrl" class="form-control" />
+                <span asp-validation-for="BikeRoute.MapUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+*@

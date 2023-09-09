@@ -1,83 +1,56 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> signInManager
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Bloggie.Web</title>
+    <title>@ViewData["Title"] - BikeApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BloggieToBike.Web.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>
+    <link rel="stylesheet" href="~/BikeApp2.styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&family=Montserrat:wght@500;600&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm b navbar-dark bg-dark order-bottom box-shadow">
+        @*<nav class="navbar navbar-expand-lg navbar-toggleable-sm sticky-top border-bottom box-shadow mb-3">*@
+        <nav class="navbar navbar-expand-lg sticky-top border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Bloggie.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <a class="navbar-brand" asp-area="" asp-page="/Index">BikeApp</a>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon" ><i class="fa-solid fa-bars"></i></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-page="/Index"> Home</a>
                         </li>
-
-                        @if(signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-                        {
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false" id="navbarDropdownAdmin">
-                                Admin
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
-                                <li>
-                                    <a href="/admin/blogs/add" class="dropdown-item">Add Blog Post</a>
-                                </li>
-                                <li>
-                                    <a href="/admin/blogs/list" class="dropdown-item">Blog Posts</a>
-                                </li>
-                                    <li>
-                                        <a href="/admin/users/index" class="dropdown-item">Users</a>
-                                    </li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/BikeRoutes/Index">Bike Routes</a>
                         </li>
-                        }
-
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Events/Index">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
                     </ul>
-                    <div class="d-flex align-item-center">
-                        @if(signInManager.IsSignedIn(User))
-                        {
-                            <div class="me-3 text-light">
-                                @User?.Identity?.Name
-                            </div>
-
-                            <a href="/logout" class="btn bg-light text-dark me-3">Logout</a>
-                        }
-                        else
-                        {
-                            <a href="/login" class="btn bg-light text-dark me-3">Login</a>
-                            <a href="/register" class="btn bg-light text-dark me-3">Register</a>
-                        }
-                    </div>
                 </div>
             </div>
         </nav>
     </header>
-        <main role="main" class="pb-3">
+    @*<div class="container">*@
+    <div >
+        <main role="main" class="pb-0">
             @RenderBody()
         </main>
+    </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - Bloggie.Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2023 - BikeApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
