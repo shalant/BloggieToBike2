@@ -9,8 +9,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 
 namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
+//namespace BloggieToBike.Web.Pages.Admin.Routes
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
         private readonly IBikeRouteRepository bikeRouteRepository;
@@ -18,8 +19,8 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
         [BindProperty]
         public EditBikeRouteRequest BikeRoute { get; set; }
 
-        [BindProperty]
-        public IFormFile FeaturedImage { get; set; }
+        //[BindProperty]
+        //public IFormFile FeaturedImage { get; set; }
 
         [BindProperty]
         [Required]
@@ -33,25 +34,24 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
 
         public async Task OnGet(Guid id)
         {
-            var blogPostDomainModel = await bikeRouteRepository.GetAsync(id);
+            var bikerouteDomainModel = await bikeRouteRepository.GetAsync(id);
 
-            if(blogPostDomainModel != null && blogPostDomainModel.Tags != null)
+            if(bikerouteDomainModel != null && bikerouteDomainModel.Tags != null)
             {
                 BikeRoute = new EditBikeRouteRequest
                 {
-                    Id = blogPostDomainModel.Id,
-                    //Heading = blogPostDomainModel.Heading,
-                    //PageTitle = blogPostDomainModel.PageTitle,
-                    Content = blogPostDomainModel.Content,
-                    ShortDescription = blogPostDomainModel.ShortDescription,
-                    FeaturedImageUrl = blogPostDomainModel.FeaturedImageUrl,
-                    //UrlHandle = blogPostDomainModel.UrlHandle,
-                    PublishedDate = blogPostDomainModel.PublishedDate,
-                    Author = blogPostDomainModel.Author,
-                    Visible = blogPostDomainModel.Visible,
+                    Id = bikerouteDomainModel.Id,
+                    Name = bikerouteDomainModel.Name,
+                    Content = bikerouteDomainModel.Content,
+                    ShortDescription = bikerouteDomainModel.ShortDescription,
+                    FeaturedImageUrl = bikerouteDomainModel.FeaturedImageUrl,
+                    StravaLink = bikerouteDomainModel.StravaLink,
+                    PublishedDate = bikerouteDomainModel.PublishedDate,
+                    Author = bikerouteDomainModel.Author,
+                    Visible = bikerouteDomainModel.Visible,
                 };
 
-                Tags = string.Join(',', blogPostDomainModel.Tags.Select(x => x.Name));
+                Tags = string.Join(',', bikerouteDomainModel.Tags.Select(x => x.Name));
             }
         }
 
@@ -66,11 +66,11 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
                     var bikeRouteDomainModel = new BikeRoute
                     {
                         Id = BikeRoute.Id,
-                        //Name = BikeRoute.Name,
+                        Name = BikeRoute.Name,
                         Content = BikeRoute.Content,
                         ShortDescription = BikeRoute.ShortDescription,
                         FeaturedImageUrl = BikeRoute.FeaturedImageUrl,
-                        //StravaLink = BikeRoute.StravaLink,
+                        StravaLink = BikeRoute.StravaLink,
                         PublishedDate = BikeRoute.PublishedDate,
                         Author = BikeRoute.Author,
                         Visible = BikeRoute.Visible,
@@ -121,12 +121,12 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
 
         private void ValidateEditBikeRoute()
         {
-            if (!string.IsNullOrWhiteSpace(BikeRoute.Heading))
+            if (!string.IsNullOrWhiteSpace(BikeRoute.Name))
             {
                 // check for minimum length
-                if(BikeRoute.Heading.Length < 10 || BikeRoute.Heading.Length > 72)
+                if(BikeRoute.Name.Length < 10 || BikeRoute.Name.Length > 72)
                 {
-                    ModelState.AddModelError("BlogPost.Heading",
+                    ModelState.AddModelError("BlogPost.Name",
                         "Heading can only be between 10 and 72 characters");
                 }
                 // check for maximum length

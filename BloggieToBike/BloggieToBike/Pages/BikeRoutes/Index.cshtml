@@ -14,7 +14,10 @@
 <p>
     @*<a asp-page="Create">Create New</a>*@
     @*<a asp-page="Admin/Add">Create New</a>*@
+    @*THIS ONE WORKS*@
     <a href="/admin/bikeroutes/add" class="dropdown-item">Add Bike Route</a>
+    @*THIS DOESNT WORK*@
+    @*<a href="/bikeroutes/create" class="dropdown-item">Create Bike Route</a>*@
 
 </p>
 
@@ -90,7 +93,8 @@
                 @Html.DisplayFor(modelItem => item.FeaturedImageUrl)
             </td>
             <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> |
+                    @*<a asp-page="./Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> |*@
+                    <a href="admin/bikeroutes/edit/@item.Id"><i class="fas fa-edit"></i></a> |
                     <a asp-page="./Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
                     <a asp-page="./Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
             </td>

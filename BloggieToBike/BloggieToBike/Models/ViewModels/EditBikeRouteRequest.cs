@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BloggieToBike.Web.Models.Domain;
+using System.ComponentModel.DataAnnotations;
 
 namespace BloggieToBike.Web.Models.ViewModels
 {
@@ -8,14 +9,20 @@ namespace BloggieToBike.Web.Models.ViewModels
         public Guid Id { get; set; }
 
         [Required]
-        public string Heading { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public string PageTitle { get; set; }
+        public int Length { get; set; }
 
+        [Required]
+        public int Elevation { get; set; }
+
+        [Required]
+        public string Direction { get; set; }
+        
         [Required]
         public string Content { get; set; }
-
+        
         [Required]
         public string ShortDescription { get; set; }
 
@@ -23,7 +30,7 @@ namespace BloggieToBike.Web.Models.ViewModels
         public string FeaturedImageUrl { get; set; }
 
         [Required]
-        public string UrlHandle { get; set; }
+        public string StravaLink { get; set; }
 
         [Required]
         public DateTime PublishedDate { get; set; }
@@ -32,5 +39,11 @@ namespace BloggieToBike.Web.Models.ViewModels
         public string Author { get; set; }
 
         public bool Visible { get; set; }
+
+        // Navigation Property
+        //public ICollection<Tag> Tags { get; set; }
+        //public ICollection<BikeRouteLike> Likes { get; set; }
+        //public ICollection<BikeRouteComment> Comments { get; set; }
+
     }
 }

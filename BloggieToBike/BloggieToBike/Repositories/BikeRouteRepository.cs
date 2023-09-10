@@ -75,7 +75,6 @@ namespace BloggieToBike.Web.Repositories
                 existingBikeRoute.Author = bikeRoute.Author;
                 existingBikeRoute.Visible = bikeRoute.Visible;
 
-
                 if(bikeRoute.Tags != null && bikeRoute.Tags.Any())
                 {
                     // Delete the existing tags

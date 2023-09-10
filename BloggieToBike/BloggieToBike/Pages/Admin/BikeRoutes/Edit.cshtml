@@ -20,43 +20,45 @@
         <div class="container">
             <form method="post">
 
-                <div class="mb-3">
+               @* <div class="mb-3">
                     <label for="heading" class="form-label">Id</label>
                     <input type="text" class="form-control" id="id" asp-for="BikeRoute.Id" readonly required>
                     <span class="text-danger" asp-validation-for="BikeRoute.Id"></span>
-                </div>
+                </div>*@
 
                 <div class="mb-3">
-                    <label for="heading" class="form-label">Heading</label>
-                    <input type="text" class="form-control" id="heading" asp-for="BikeRoute.Heading" required>
-                    <span class="text-danger" asp-validation-for="BikeRoute.Heading"></span>
-
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" asp-for="BikeRoute.Name" required>
+                    <span class="text-danger" asp-validation-for="BikeRoute.Name"></span>
                 </div>
-
                 <div class="mb-3">
-                    <label for="pageTitle" class="form-label">Page Title</label>
-                    <input type="text" class="form-control" id="pageTitle" asp-for="BikeRoute.PageTitle" required>
-                    <span class="text-danger" asp-validation-for="BikeRoute.PageTitle"></span>
-
+                    <label for="length" class="form-label">Length</label>
+                    <input type="number" class="form-control" id="length" asp-for="BikeRoute.Length" required>
+                    <span class="text-danger" asp-validation-for="BikeRoute.Length"></span>
                 </div>
-
+                <div class="mb-3">
+                    <label for="elevation" class="form-label">Elevation</label>
+                    <textarea class="form-control" id="elevation" asp-for="BikeRoute.Elevation"></textarea required>
+                    <span class="text-danger" asp-validation-for="BikeRoute.Elevation"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="direction" class="form-label">Direction</label>
+                    <input type="text" class="form-control" id="direction" asp-for="BikeRoute.Direction" required>
+                    <span class="text-danger" asp-validation-for="BikeRoute.Direction"></span>
+                </div>
                 <div class="mb-3">
                     <label for="content" class="form-label">Content</label>
-                    <textarea class="form-control" id="content" asp-for="BikeRoute.Content"></textarea required>
+                    <input type="text" class="form-control" id="content" asp-for="BikeRoute.Content" required>
                     <span class="text-danger" asp-validation-for="BikeRoute.Content"></span>
-
                 </div>
-
                 <div class="mb-3">
                     <label for="shortDescription" class="form-label">Short Description</label>
                     <input type="text" class="form-control" id="shortDescription" asp-for="BikeRoute.ShortDescription" required>
                     <span class="text-danger" asp-validation-for="BikeRoute.ShortDescription"></span>
-
                 </div>
-
                 <div class="mb-3">
-                    <label for="featuredImageUpload" class="form-label">Featured Image Upload</label>
-                    <input type="file" id="featuredImageUpload" asp-for="FeaturedImage" required/>
+                    <label for="featuredImageUrl" class="form-label">Featured Image Url</label>
+                    <input type="file" id="featuredImageUrl" asp-for="BikeRoute.FeaturedImageUrl" required/>
 
                     @if(Model.BikeRoute.FeaturedImageUrl != null)
                     {
@@ -67,41 +69,32 @@
                         <img src="" id="featuredImageDisplay" style="display:none; width:300px;" />
                     }
                 </div>
-
                 <div class="mb-3">
                     <label for="featuredImageUrl" class="form-label">Featured Image Url</label>
                     <input type="text" class="form-control" id="featuredImageUrl" asp-for="BikeRoute.FeaturedImageUrl" required>
                     <span class="text-danger" asp-validation-for="BikeRoute.FeaturedImageUrl"></span>
-
                 </div>
-
                 <div class="mb-3">
-                    <label for="urlHandle" class="form-label">Url Handle</label>
-                    <input type="text" class="form-control" id="urlHandle" asp-for="BikeRoute.UrlHandle" required>
-                    <span class="text-danger" asp-validation-for="BikeRoute.UrlHandle"></span>
-
+                    <label for="stravaLink" class="form-label">Strava Link</label>
+                    <input type="text" class="form-control" id="stravaLink" asp-for="BikeRoute.StravaLink" required>
+                    <span class="text-danger" asp-validation-for="BikeRoute.StravaLink"></span>
                 </div>
-
                 <div class="mb-3">
                     <label for="publishedDate" class="form-label">Published Date</label>
                     <input type="date" class="form-control" id="publishedDate" asp-for="BikeRoute.PublishedDate" required>
                     <span class="text-danger" asp-validation-for="BikeRoute.PublishedDate"></span>
-
                 </div>
-
                 <div class="mb-3">
                     <label for="author" class="form-label">Author</label>
                     <input type="text" class="form-control" id="author" asp-for="BikeRoute.Author" required>
                     <span class="text-danger" asp-validation-for="BikeRoute.Author"></span>
-
                 </div>
 
-                <div class="mb-3">
+                @*<div class="mb-3">
                     <label for="tags" class="form-label">Tags (comma separated)</label>
                     <input type="text" id="tags" class="form-control" asp-for="Tags" required/>
                     <span class="text-danger" asp-validation-for="Tags"></span>
-
-                </div>
+                </div>*@
 
                 <div class="form-check mb-3">
                     <input class="form-check-input" type="checkbox" id="isVisible" asp-for="BikeRoute.Visible">
