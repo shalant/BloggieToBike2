@@ -4,28 +4,15 @@ namespace BloggieToBike.Web.Models.ViewModels
 {
     public class AddBikeRoute
     {
-        [Required]
-        public string Heading { get; set; }
-
-        [Required]
-        public string PageTitle { get; set; }
-
-        [Required]
+        public string Name { get; set; }
+        public int Length { get; set; }
+        public int Elevation { get; set; }
+        public string Direction { get; set; }
         public string Content { get; set; }
-
-        [Required]
         public string ShortDescription { get; set; }
-
-        [Required]
         public string FeaturedImageUrl { get; set; }
-
-        [Required]
-        public string UrlHandle { get; set; }
-
-        [Required]
+        public string StravaLink { get; set; }
         public DateTime PublishedDate { get; set; }
-
-        [Required]
         public string Author { get; set; }
         public bool Visible { get; set; }
     }

@@ -1,7 +1,9 @@
 ﻿@page
 @*@model BloggieToBike.Web.Pages.BikeRoutes.Pages_BikeRoutes_Index*@
+@model IndexModel
+@*@model BloggieToBike.Web.Pages.BikeRoutes.IndexModel*@
 
-@model BloggieToBike.Web.Models.Domain.BikeRoute
+@*@model BloggieToBike.Web.Models.Domain.BikeRoute*@
 
 @{
     ViewData["Title"] = "Index";
@@ -10,7 +12,10 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    @*<a asp-page="Create">Create New</a>*@
+    @*<a asp-page="Admin/Add">Create New</a>*@
+    <a href="/admin/bikeroutes/add" class="dropdown-item">Add Bike Route</a>
+
 </p>
 
 @*<form>
@@ -27,42 +32,44 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(Model => Model.Routes[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PublishedDate)
+                @Html.DisplayNameFor(Model => Model.Routes[0].PublishedDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Length)
+                @Html.DisplayNameFor(Model => Model.Routes[0].Length)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Elevation)
+                @Html.DisplayNameFor(Model => Model.Routes[0].Elevation)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Direction)
+                @Html.DisplayNameFor(Model => Model.Routes[0].Direction)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ShortDescription)
+                @Html.DisplayNameFor(Model => Model.Routes[0].ShortDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StravaLink)
+                @Html.DisplayNameFor(Model => Model.Routes[0].StravaLink)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FeaturedImageUrl)
+                @Html.DisplayNameFor(Model => Model.Routes[0].FeaturedImageUrl)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @*@foreach (var item in Model.BikeRoute) {*@
-@*
-@foreach (var item in BikeRoutes[0].) {
+
+@*@foreach (var item in Model.BikeRoute) {*@
+@foreach (var item in Model.Routes) {
         <tr>
             <td>
+                @*@Html.DisplayFor(modelItem => item.Name)*@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
+                @Html.DisplayFor(modelItem => item.PublishedDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Length)
@@ -74,13 +81,13 @@
                 @Html.DisplayFor(modelItem => item.Direction)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.ShortDescription)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StravaLink)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MapUrl)
+                @Html.DisplayFor(modelItem => item.FeaturedImageUrl)
             </td>
             <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> |
@@ -88,6 +95,6 @@
                     <a asp-page="./Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
             </td>
         </tr>
-}*@
+}
     </tbody>
 </table>

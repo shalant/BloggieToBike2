@@ -12,9 +12,9 @@ namespace BloggieToBike.Pages.BikeRoutes
 {
     public class IndexModel : PageModel
     {
-        private readonly BloggieToBike.Web.Data.BloggieToBikeDbContext _context;
+        private readonly Web.Data.BloggieToBikeDbContext _context;
 
-        public IndexModel(BloggieToBike.Web.Data.BloggieToBikeDbContext context)
+        public IndexModel(Web.Data.BloggieToBikeDbContext context)
         {
             _context = context;
         }
@@ -53,10 +53,10 @@ namespace BloggieToBike.Pages.BikeRoutes
             Directions = new SelectList(await directionQuery.Distinct().ToListAsync());
             BikeRoute = await bikeRoutes.ToListAsync();
 
-            //if (_context.BikeRoute != null)
-            //{
-            //    BikeRoute = await _context.BikeRoute.ToListAsync();
-            //}
+            if (_context.BikeRoutes != null)
+            {
+                BikeRoute = await _context.BikeRoutes.ToListAsync();
+            }
         }
     }
 }

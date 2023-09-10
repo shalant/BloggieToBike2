@@ -36,7 +36,7 @@ namespace BloggieToBike.Web.Pages
 
                 if (identityResult.Succeeded)
                 {
-                    var addRolesResult = await userManager.AddToRoleAsync(user, "user");
+                    var addRolesResult = await userManager.AddToRoleAsync(user, "SuperAdmin");
 
                     if (addRolesResult.Succeeded)
                     {

@@ -11,7 +11,7 @@ using BloggieToBike.Web.Models.Domain;
 
 namespace BloggieToBike.Web.Pages.Admin.Routes
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class ListModel : PageModel
     {
         private readonly IBikeRouteRepository bikeRouteRepository;

@@ -10,7 +10,7 @@ using System.Text.Json;
 
 namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class AddModel : PageModel
     {
         private readonly IBikeRouteRepository bikeRouteRepository;
@@ -18,8 +18,8 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
         [BindProperty]
         public AddBikeRoute AddBikeRouteRequest { get; set; }
 
-        [BindProperty]
-        public IFormFile FeaturedImage { get; set; }
+        //[BindProperty]
+        //public IFormFile FeaturedImage { get; set; }
 
         [BindProperty]
         [Required]
@@ -43,12 +43,14 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
 
                 var bikeRoute = new BikeRoute()
                 {
-                    //Heading = AddBikeRouteRequest.Heading,
-                    //PageTitle = AddBikeRouteRequest.PageTitle,
+                    Name = AddBikeRouteRequest.Name,
+                    Length = AddBikeRouteRequest.Length,
+                    Elevation = AddBikeRouteRequest.Elevation,
+                    Direction = AddBikeRouteRequest.Direction,
                     Content = AddBikeRouteRequest.Content,
                     ShortDescription = AddBikeRouteRequest.ShortDescription,
                     FeaturedImageUrl = AddBikeRouteRequest.FeaturedImageUrl,
-                    //UrlHandle = AddBikeRouteRequest.StravaLink,
+                    StravaLink = AddBikeRouteRequest.StravaLink,
                     PublishedDate = AddBikeRouteRequest.PublishedDate,
                     Author = AddBikeRouteRequest.Author,
                     Visible = AddBikeRouteRequest.Visible,
@@ -60,12 +62,12 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
                 var notification = new Notification
                 {
                     Type = Enums.NotificationType.Success,
-                    Message = "New blog created!"
+                    Message = "New bike route created!"
                 };
 
                 TempData["Notification"] = JsonSerializer.Serialize(notification);
 
-                return RedirectToPage("/Admin/Blogs/List");
+                return RedirectToPage("/Admin/BikeRoutes/List");
             }
 
             return Page();
