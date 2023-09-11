@@ -5,11 +5,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>List View</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
-    @if(User.Identity.Equals("superadmin"))
+    @if(User.IsInRole("superadmin"))
     {
         <h1>superadmin</h1>
     }
@@ -42,9 +42,9 @@
                 @Html.DisplayFor(modelItem => item.Length)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="/Admin/Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="/Admin/Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="/Admin/Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
