@@ -6,7 +6,13 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+//builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AuthorizePage("/NewBikeRoutes/Edit" );
+    options.Conventions.AuthorizeAreaFolder("Identity", "/NewBikeRoutes");
+    options.Conventions.AllowAnonymousToPage("/NewBikeRoutes/Index");
+});
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<BloggieToBikeDbContext>(options =>
