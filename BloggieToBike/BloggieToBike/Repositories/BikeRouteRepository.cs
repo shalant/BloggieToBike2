@@ -20,7 +20,8 @@ namespace BloggieToBike.Web.Repositories
             return bikeRoute;
         }
 
-        public async Task<bool> DeleteAsync(Guid id)
+        //public async Task<bool> DeleteAsync(Guid id)
+        public async Task<bool> DeleteAsync(int id)
         {
             var existingBikeRoute = await bloggieToBikeDbContext.BikeRoutes.FindAsync(id);
             if(existingBikeRoute != null)
@@ -45,7 +46,8 @@ namespace BloggieToBike.Web.Repositories
                 .ToListAsync();
         }
 
-        public async Task<BikeRoute> GetAsync(Guid id)
+        //public async Task<BikeRoute> GetAsync(Guid id)
+        public async Task<BikeRoute> GetAsync(int id)
         {
             return await bloggieToBikeDbContext.BikeRoutes.Include(nameof(BikeRoute.Tags))
                 .FirstOrDefaultAsync(x => x.Id == id);

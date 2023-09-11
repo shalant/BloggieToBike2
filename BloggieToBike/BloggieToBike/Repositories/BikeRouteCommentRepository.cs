@@ -20,7 +20,8 @@ namespace BloggieToBike.Web.Repositories
             return bikeRouteComment;
         }
 
-        public async Task<IEnumerable<BikeRouteComment>> GetAllAsync(Guid bikeRouteId)
+        //public async Task<IEnumerable<BikeRouteComment>> GetAllAsync(Guid bikeRouteId)
+        public async Task<IEnumerable<BikeRouteComment>> GetAllAsync(int bikeRouteId)
         {
             return await bloggieToBikeDbContext.BikeRouteComments.Where(x => x.BikeRouteId == bikeRouteId).ToListAsync();
         }

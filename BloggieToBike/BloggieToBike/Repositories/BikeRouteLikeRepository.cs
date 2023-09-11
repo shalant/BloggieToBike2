@@ -13,11 +13,12 @@ namespace BloggieToBike.Web.Repositories
             this.bloggieToBikeDbContext = bloggieToBikeDbContext;
         }
 
-        public async Task AddLikeForBikeRoute(Guid bikeRouteId, Guid userId)
+        //public async Task AddLikeForBikeRoute(Guid bikeRouteId, Guid userId)
+        public async Task AddLikeForBikeRoute(int bikeRouteId, int userId)
         {
             var like = new BikeRouteLike
             {
-                Id = Guid.NewGuid(),
+                //Id = Guid.NewGuid(),
                 BikeRouteId = bikeRouteId,
                 UserId = userId,
             };
@@ -26,13 +27,15 @@ namespace BloggieToBike.Web.Repositories
             await bloggieToBikeDbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<BikeRouteLike>> GetLikesForBikeRoute(Guid bikeRouteId)
+        //public async Task<IEnumerable<BikeRouteLike>> GetLikesForBikeRoute(Guid bikeRouteId)
+        public async Task<IEnumerable<BikeRouteLike>> GetLikesForBikeRoute(int bikeRouteId)
         {
             return await bloggieToBikeDbContext.BikeRouteLikes.Where(x => x.BikeRouteId == bikeRouteId)
                 .ToListAsync();
         }
 
-        public async Task<int> GetTotalLikesForBikeRoute(Guid bikeRouteId)
+        //public async Task<int> GetTotalLikesForBikeRoute(Guid bikeRouteId)
+        public async Task<int> GetTotalLikesForBikeRoute(int bikeRouteId)
         {
             return await bloggieToBikeDbContext.BikeRouteLikes
                 .CountAsync(x => x.BikeRouteId == bikeRouteId);

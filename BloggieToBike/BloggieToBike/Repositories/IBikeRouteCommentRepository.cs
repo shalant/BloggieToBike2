@@ -6,6 +6,7 @@ namespace BloggieToBike.Web.Repositories
     {
         Task<BikeRouteComment> AddAsync(BikeRouteComment bikeRouteComment);
 
-        Task<IEnumerable<BikeRouteComment>> GetAllAsync(Guid bikeRouteId);
+        //Task<IEnumerable<BikeRouteComment>> GetAllAsync(Guid bikeRouteId);
+        Task<IEnumerable<BikeRouteComment>> GetAllAsync(int bikeRouteId);
     }
 }

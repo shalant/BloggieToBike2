@@ -25,7 +25,8 @@ namespace BloggieToBike.Web.Pages.Route
         public bool Liked { get; set; }
 
         [BindProperty]
-        public Guid BikeRouteId { get; set; }
+        //public Guid BikeRouteId { get; set; }
+        public int BikeRouteId { get; set; }
 
         [BindProperty]
         [Required]
@@ -66,7 +67,8 @@ namespace BloggieToBike.Web.Pages.Route
                         BikeRouteId = BikeRouteId,
                         Description = CommentDescription,
                         DateAdded = DateTime.Now,
-                        UserId = Guid.Parse(userId)
+                        //UserId = Guid.Parse(userId)
+                        UserId = int.Parse(userId)
                     };
 
                     await bikeRouteCommentRepository.AddAsync(comment);
@@ -111,7 +113,8 @@ namespace BloggieToBike.Web.Pages.Route
 
                     var userId = userManager.GetUserId(User);
 
-                    Liked = likes.Any(x => x.UserId == Guid.Parse(userId));
+                    //Liked = likes.Any(x => x.UserId == Guid.Parse(userId));
+                    Liked = likes.Any(x => x.UserId == int.Parse(userId));
 
                     await GetComments();
                 }

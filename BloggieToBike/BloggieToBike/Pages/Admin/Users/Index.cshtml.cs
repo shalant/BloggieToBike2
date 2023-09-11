@@ -18,7 +18,8 @@ namespace BloggieToBike.Web.Pages.Admin.Users
         public AddUser AddUserRequest { get; set; }
 
         [BindProperty]
-        public Guid SelectedUserId { get; set; }
+        //public Guid SelectedUserId { get; set; }
+        public int SelectedUserId { get; set; }
 
         public IndexModel(IUserRepository userRepository)
         {
@@ -78,7 +79,8 @@ namespace BloggieToBike.Web.Pages.Admin.Users
             {
                 Users.Add(new Models.ViewModels.User()
                 {
-                    Id = Guid.Parse(user.Id),
+                    //Id = Guid.Parse(user.Id),
+                    Id = int.Parse(user.Id),
                     Username = user.UserName,
                     Email = user.Email
                 });

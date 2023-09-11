@@ -14,9 +14,9 @@ namespace BloggieToBike.Pages.BikeRoutes
 {
     public class EditModel : PageModel
     {
-        private readonly BloggieToBike.Web.Data.BloggieToBikeDbContext _context;
+        private readonly BloggieToBikeDbContext _context;
 
-        public EditModel(BloggieToBike.Web.Data.BloggieToBikeDbContext context)
+        public EditModel(BloggieToBikeDbContext context)
         {
             _context = context;
         }
@@ -24,14 +24,15 @@ namespace BloggieToBike.Pages.BikeRoutes
         [BindProperty]
         public BikeRoute BikeRoute { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(Guid guid)
+        //public async Task<IActionResult> OnGetAsync(Guid guid)
+        public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (guid == null || _context.BikeRoutes == null)
+            if (id == null || _context.BikeRoutes == null)
             {
                 return NotFound();
             }
 
-            var bikeroute = await _context.BikeRoutes.FirstOrDefaultAsync(m => m.Id == guid);
+            var bikeroute = await _context.BikeRoutes.FirstOrDefaultAsync(m => m.Id == id);
             if (bikeroute == null)
             {
                 return NotFound();
@@ -71,7 +72,8 @@ namespace BloggieToBike.Pages.BikeRoutes
             return RedirectToPage("./Index");
         }
 
-        private bool BikeRouteExists(Guid id)
+        //private bool BikeRouteExists(Guid id)
+        private bool BikeRouteExists(int id)
         {
             return (_context.BikeRoutes?.Any(e => e.Id == id)).GetValueOrDefault();
         }

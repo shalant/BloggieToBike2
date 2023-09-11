@@ -29,7 +29,8 @@ namespace BloggieToBike.Web.Controllers
 
         [HttpGet]
         [Route("{bikeRouteId:Guid}/totalLikes")]
-        public async Task<IActionResult> GetTotalLikes([FromRoute] Guid bikeRouteId)
+        //public async Task<IActionResult> GetTotalLikes([FromRoute] Guid bikeRouteId)
+        public async Task<IActionResult> GetTotalLikes([FromRoute] int bikeRouteId)
         {
             var totalLikes = await bikeRouteLikeRepository.GetTotalLikesForBikeRoute(bikeRouteId);
 

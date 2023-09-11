@@ -32,7 +32,7 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
         }
 
         //public async Task OnGet(Guid id)
-        public async Task OnGet(Guid id)
+        public async Task OnGet(int id)
         {
             var bikerouteDomainModel = await bikeRouteRepository.GetAsync(id);
 
