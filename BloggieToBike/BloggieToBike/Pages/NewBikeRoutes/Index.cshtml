@@ -9,6 +9,10 @@
 
 <p>
     <a asp-page="Create">Create New</a>
+    @if(User.Identity.Equals("superadmin"))
+    {
+        <h1>superadmin</h1>
+    }
 </p>
 <table class="table">
     <thead>
