@@ -23,7 +23,7 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
         //public IFormFile FeaturedImage { get; set; }
 
         [BindProperty]
-        [Required]
+        //[Required]
         public string Tags { get; set; }
 
         public EditModel(IBikeRouteRepository bikeRouteRepository)
@@ -31,7 +31,7 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
             this.bikeRouteRepository = bikeRouteRepository;
         }
 
-
+        //public async Task OnGet(Guid id)
         public async Task OnGet(Guid id)
         {
             var bikerouteDomainModel = await bikeRouteRepository.GetAsync(id);
@@ -42,6 +42,9 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
                 {
                     Id = bikerouteDomainModel.Id,
                     Name = bikerouteDomainModel.Name,
+                    Length = bikerouteDomainModel.Length,
+                    Elevation = bikerouteDomainModel.Elevation,
+                    Direction = bikerouteDomainModel.Direction,
                     Content = bikerouteDomainModel.Content,
                     ShortDescription = bikerouteDomainModel.ShortDescription,
                     FeaturedImageUrl = bikerouteDomainModel.FeaturedImageUrl,
@@ -49,6 +52,9 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
                     PublishedDate = bikerouteDomainModel.PublishedDate,
                     Author = bikerouteDomainModel.Author,
                     Visible = bikerouteDomainModel.Visible,
+                    //Comments = bikerouteDomainModel.Comments,
+                    //Likes = bikerouteDomainModel.Likes,
+                    //Tags = bikerouteDomainModel.Tags,
                 };
 
                 Tags = string.Join(',', bikerouteDomainModel.Tags.Select(x => x.Name));
@@ -67,6 +73,8 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
                     {
                         Id = BikeRoute.Id,
                         Name = BikeRoute.Name,
+                        Length = BikeRoute.Length,
+                        Elevation = BikeRoute.Elevation,
                         Content = BikeRoute.Content,
                         ShortDescription = BikeRoute.ShortDescription,
                         FeaturedImageUrl = BikeRoute.FeaturedImageUrl,
@@ -74,6 +82,8 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
                         PublishedDate = BikeRoute.PublishedDate,
                         Author = BikeRoute.Author,
                         Visible = BikeRoute.Visible,
+                        //Likes = BikeRoute.Likes,
+                        //Comments = BikeRoute.Comments,
                         Tags = new List<Tag>(Tags.Split(',').Select(x => new Tag() { Name = x.Trim() }))
                     };
 

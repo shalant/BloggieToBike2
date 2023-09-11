@@ -66,6 +66,7 @@ namespace BloggieToBike.Web.Repositories
             {
                 existingBikeRoute.Name = bikeRoute.Name;
                 existingBikeRoute.Length = bikeRoute.Length;
+                existingBikeRoute.Elevation = bikeRoute.Elevation;
                 existingBikeRoute.Direction = bikeRoute.Direction;
                 existingBikeRoute.Content = bikeRoute.Content;
                 existingBikeRoute.ShortDescription = bikeRoute.ShortDescription;
@@ -75,18 +76,15 @@ namespace BloggieToBike.Web.Repositories
                 existingBikeRoute.Author = bikeRoute.Author;
                 existingBikeRoute.Visible = bikeRoute.Visible;
 
-                if(bikeRoute.Tags != null && bikeRoute.Tags.Any())
-                {
-                    // Delete the existing tags
-                    bloggieToBikeDbContext.Tags.RemoveRange(existingBikeRoute.Tags);
+                //if(bikeRoute.Tags != null && bikeRoute.Tags.Any())
+                //{
+                //    // Delete the existing tags
+                //    bloggieToBikeDbContext.Tags.RemoveRange(existingBikeRoute.Tags);
 
-                    // Add new tags
-                    bikeRoute.Tags.ToList().ForEach(x => x.BikeRouteId = existingBikeRoute.Id);
-                    await bloggieToBikeDbContext.Tags.AddRangeAsync(bikeRoute.Tags);
-
-                }
-
-                
+                //    // Add new tags
+                //    bikeRoute.Tags.ToList().ForEach(x => x.BikeRouteId = existingBikeRoute.Id);
+                //    await bloggieToBikeDbContext.Tags.AddRangeAsync(bikeRoute.Tags);
+                //}
             }
 
             await bloggieToBikeDbContext.SaveChangesAsync();

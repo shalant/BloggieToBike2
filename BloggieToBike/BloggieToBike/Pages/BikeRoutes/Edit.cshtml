@@ -1,5 +1,5 @@
-﻿@*@page
-@model BikeApp.Pages.BikeRoutes.EditModel
+﻿@page
+@model BloggieToBike.Pages.BikeRoutes.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -20,11 +20,6 @@
                 <span asp-validation-for="BikeRoute.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BikeRoute.DateCreated" class="control-label"></label>
-                <input asp-for="BikeRoute.DateCreated" class="form-control" />
-                <span asp-validation-for="BikeRoute.DateCreated" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="BikeRoute.Length" class="control-label"></label>
                 <input asp-for="BikeRoute.Length" class="form-control" />
                 <span asp-validation-for="BikeRoute.Length" class="text-danger"></span>
@@ -38,11 +33,20 @@
                 <label asp-for="BikeRoute.Direction" class="control-label"></label>
                 <input asp-for="BikeRoute.Direction" class="form-control" />
                 <span asp-validation-for="BikeRoute.Direction" class="text-danger"></span>
+            </div><div class="form-group">
+                <label asp-for="BikeRoute.Content" class="control-label"></label>
+                <input asp-for="BikeRoute.Content" class="form-control" />
+                <span asp-validation-for="BikeRoute.Content" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BikeRoute.Description" class="control-label"></label>
-                <input asp-for="BikeRoute.Description" class="form-control" />
-                <span asp-validation-for="BikeRoute.Description" class="text-danger"></span>
+                <label asp-for="BikeRoute.ShortDescription" class="control-label"></label>
+                <input asp-for="BikeRoute.ShortDescription" class="form-control" />
+                <span asp-validation-for="BikeRoute.ShortDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.FeaturedImageUrl" class="control-label"></label>
+                <input asp-for="BikeRoute.FeaturedImageUrl" class="form-control" />
+                <span asp-validation-for="BikeRoute.FeaturedImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="BikeRoute.StravaLink" class="control-label"></label>
@@ -50,9 +54,19 @@
                 <span asp-validation-for="BikeRoute.StravaLink" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BikeRoute.MapUrl" class="control-label"></label>
-                <input asp-for="BikeRoute.MapUrl" class="form-control" />
-                <span asp-validation-for="BikeRoute.MapUrl" class="text-danger"></span>
+                <label asp-for="BikeRoute.PublishedDate" class="control-label"></label>
+                <input asp-for="BikeRoute.PublishedDate" class="form-control" />
+                <span asp-validation-for="BikeRoute.PublishedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.Author" class="control-label"></label>
+                <input asp-for="BikeRoute.Author" class="form-control" />
+                <span asp-validation-for="BikeRoute.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeRoute.Visible" class="control-label"></label>
+                <input asp-for="BikeRoute.Visible" class="form-control" />
+                <span asp-validation-for="BikeRoute.Visible" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -68,4 +82,3 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-*@

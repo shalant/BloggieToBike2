@@ -5,45 +5,45 @@ namespace BloggieToBike.Web.Models.ViewModels
 {
     public class EditBikeRouteRequest
     {
-        [Required]
+        //[Required]
         public Guid Id { get; set; }
 
-        [Required]
+        //[Required]
         public string Name { get; set; }
 
-        [Required]
+        //[Required]
         public int Length { get; set; }
 
-        [Required]
+        //[Required]
         public int Elevation { get; set; }
 
-        [Required]
+        //[Required]
         public string Direction { get; set; }
         
-        [Required]
+        //[Required]
         public string Content { get; set; }
         
-        [Required]
+        //[Required]
         public string ShortDescription { get; set; }
 
-        [Required]
+        //[Required]
         public string FeaturedImageUrl { get; set; }
 
-        [Required]
+        //[Required]
         public string StravaLink { get; set; }
 
-        [Required]
+        //[Required]
         public DateTime PublishedDate { get; set; }
 
-        [Required]
+        //[Required]
         public string Author { get; set; }
 
         public bool Visible { get; set; }
 
         // Navigation Property
-        //public ICollection<Tag> Tags { get; set; }
-        //public ICollection<BikeRouteLike> Likes { get; set; }
-        //public ICollection<BikeRouteComment> Comments { get; set; }
+        public ICollection<Tag>? Tags { get; set; }
+        public ICollection<BikeRouteLike>? Likes { get; set; }
+        public ICollection<BikeRouteComment>? Comments { get; set; }
 
     }
 }

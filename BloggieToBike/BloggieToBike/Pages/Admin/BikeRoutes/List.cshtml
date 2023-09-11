@@ -5,7 +5,7 @@
 
 <div class="bg-secondary bg-opacity-10 py-2 mb-5">
     <div class="container">
-        <h1>Blog Posts</h1>
+        <h1>Bike Routes</h1>
     </div>
 </div>
 
@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <td>Id</td>
-                    <td>Heading</td>
+                    <td>Name</td>
                     <td>View</td>
                 </tr>
             </thead>
@@ -27,8 +27,8 @@
                 {
                     <tr>
                         <td>@bikeRoute.Id</td>
-                        @*<td>@bikeRoute.Heading</td>*@
-                        <td><a href="/Admin/Blogs/Edit/@bikeRoute.Id">View</a></td>
+                        <td>@bikeRoute.Name</td>
+                        <td><a href="/Admin/BikeRoutes/Edit/@bikeRoute.Id">View</a></td>
                     </tr>
                 }
             </tbody>
@@ -38,6 +38,6 @@
 else
 {
     <div class="container">
-        <p>No blog posts were found</p>
+        <p>No bike routes were found</p>
     </div>
 }

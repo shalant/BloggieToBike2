@@ -93,8 +93,9 @@
                 @Html.DisplayFor(modelItem => item.FeaturedImageUrl)
             </td>
             <td>
-                    @*<a asp-page="./Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> |*@
-                    <a href="admin/bikeroutes/edit/@item.Id"><i class="fas fa-edit"></i></a> |
+                    <a asp-page="./Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> |
+                    @*<a href="admin/bikeroutes/edit/@item.Id"><i class="fas fa-edit"></i></a> |*@
+                    <a href="/edit/@item.Id"><i class="fas fa-edit"></i></a> |
                     <a asp-page="./Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
                     <a asp-page="./Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
             </td>
