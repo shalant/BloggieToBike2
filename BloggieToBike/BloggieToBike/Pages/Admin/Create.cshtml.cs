@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using BloggieToBike.Models;
 using BloggieToBike.Web.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BloggieToBike.Pages.NewBikeRoutes
 {

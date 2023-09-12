@@ -1,5 +1,7 @@
 ﻿@page
 @model BloggieToBike.Pages.NewBikeRoutes.EditModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
 
 @{
     ViewData["Title"] = "Edit";
@@ -7,37 +9,43 @@
 
 <h1>Edit</h1>
 
-<h4>NewBikeRoute</h4>
+<h4>Edit Bike Route</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="NewBikeRoute.Id" />
-            <div class="form-group">
-                <label asp-for="NewBikeRoute.Name" class="control-label"></label>
-                <input asp-for="NewBikeRoute.Name" class="form-control" />
-                <span asp-validation-for="NewBikeRoute.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NewBikeRoute.Direction" class="control-label"></label>
-                <input asp-for="NewBikeRoute.Direction" class="form-control" />
-                <span asp-validation-for="NewBikeRoute.Direction" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NewBikeRoute.Length" class="control-label"></label>
-                <input asp-for="NewBikeRoute.Length" class="form-control" />
-                <span asp-validation-for="NewBikeRoute.Length" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+{
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="NewBikeRoute.Id" />
+                <div class="form-group">
+                    <label asp-for="NewBikeRoute.Name" class="control-label"></label>
+                    <input asp-for="NewBikeRoute.Name" class="form-control" />
+                    <span asp-validation-for="NewBikeRoute.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewBikeRoute.Direction" class="control-label"></label>
+                    <input asp-for="NewBikeRoute.Direction" class="form-control" />
+                    <span asp-validation-for="NewBikeRoute.Direction" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewBikeRoute.Length" class="control-label"></label>
+                    <input asp-for="NewBikeRoute.Length" class="form-control" />
+                    <span asp-validation-for="NewBikeRoute.Length" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
+}
+else
+{
+    <h2>Only members can edit a route</h2>
+}
 <div>
-    <a asp-page="./newbikeroutes">Back to List</a>
+    <a asp-page="newbikeroutes">Back to List</a>
 </div>
 
 @section Scripts {
